@@ -1,0 +1,57 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Outfit", system-ui, sans-serif;
+  --font-display: "Fraunces", Georgia, serif;
+  --color-bg: #f3efe6;
+  --color-surface: #fffdf8;
+  --color-ink: #1e1a16;
+  --color-muted: #5c554c;
+  --color-line: #e4d9c8;
+  --color-pine: #0e6b56;
+  --color-pine-soft: #e5f2ed;
+  --color-rust: #9a3412;
+  --color-rust-soft: #f8ebe4;
+  --color-chip: #efe8da;
+}
+
+@layer base {
+  html {
+    color-scheme: light;
+  }
+  body {
+    background: var(--color-bg);
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+  }
+  button:not(:disabled),
+  [role="button"]:not(:disabled) {
+    cursor: pointer;
+  }
+  h1,
+  h2,
+  h3 {
+    text-wrap: balance;
+  }
+}
+
+@keyframes lume-in {
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.lume-in {
+  animation: lume-in 180ms ease-out;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .lume-in {
+    animation: none;
+  }
+}
